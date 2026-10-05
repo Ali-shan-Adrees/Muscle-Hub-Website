@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Muscle Hub Gym & Fitness Center | Gym in Lahore</title>
+<meta name="description" content="Muscle Hub Gym & Fitness Center in Lower Mall, Rewaz Garden, Lahore. Train for strength, muscle building, fitness and better performance.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --black:#0a0a0a;
+  --bg-alt:#121212;
+  --card:#161616;
+  --red:#c81d2c;
+  --red-light:#e2273a;
+  --red-dark:#6e0f1a;
+  --white:#f4f3f0;
+  --muted:#9a968f;
+  --border:#242424;
+  --font-head:'Oswald',sans-serif;
+  --font-body:'Manrope',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--black);
+  color:var(--white);
+  font-family:var(--font-body);
+  line-height:1.6;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+h1,h2,h3,h4{font-family:var(--font-head);font-weight:700;text-transform:uppercase;line-height:1.08;letter-spacing:.5px;}
+.container{max-width:1240px;margin:0 auto;padding:0 24px;}
+.eyebrow{font-family:var(--font-head);font-size:13px;letter-spacing:3px;color:var(--red-light);font-weight:600;margin-bottom:14px;display:block;}
+.section{padding:100px 0;}
+.section-alt{background:var(--bg-alt);}
+.section-head{max-width:640px;margin-bottom:56px;}
+.section-head h2{font-size:clamp(32px,4.2vw,50px);}
+.section-head p{color:var(--muted);margin-top:16px;font-size:17px;}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  font-family:var(--font-head);font-weight:600;letter-spacing:1px;text-transform:uppercase;
+  padding:16px 34px;font-size:14px;border-radius:3px;border:2px solid transparent;cursor:pointer;
+  transition:transform .25s ease, background .25s ease, border-color .25s ease, color .25s ease;
+}
+.btn-primary{background:var(--red);color:#fff;}
+.btn-primary:hover{background:var(--red-light);transform:translateY(-3px);}
+.btn-outline{border-color:rgba(244,243,240,.35);color:var(--white);}
+.btn-outline:hover{border-color:#fff;background:rgba(255,255,255,.06);transform:translateY(-3px);}
+.btn-outline-light{border-color:rgba(255,255,255,.55);color:#fff;}
+.btn-outline-light:hover{background:rgba(255,255,255,.14);}
+
+/* NAV */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:999;
+  padding:22px 0;transition:background .35s ease, padding .35s ease, box-shadow .35s ease;
+}
+header.scrolled{background:rgba(8,8,8,.92);backdrop-filter:blur(8px);padding:14px 0;box-shadow:0 4px 24px rgba(0,0,0,.4);}
+.nav-wrap{display:flex;align-items:center;justify-content:space-between;}
+.logo{display:flex;align-items:center;gap:10px;font-family:var(--font-head);font-size:22px;font-weight:700;letter-spacing:.5px;}
+.logo svg{flex-shrink:0;}
+.logo span{color:var(--red-light);}
+.nav-links{display:flex;gap:34px;list-style:none;}
+.nav-links a{font-size:14px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;font-family:var(--font-head);color:var(--white);opacity:.85;transition:opacity .2s, color .2s;position:relative;}
+.nav-links a:hover{opacity:1;color:var(--red-light);}
+.nav-right{display:flex;align-items:center;gap:18px;}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;z-index:1001;}
+.burger span{width:26px;height:2px;background:#fff;transition:.3s;}
+.mobile-menu{position:fixed;top:0;right:0;height:100vh;width:78%;max-width:340px;background:#0e0e0e;z-index:1000;
+  transform:translateX(100%);transition:transform .4s cubic-bezier(.77,0,.18,1);padding:100px 32px 40px;display:flex;flex-direction:column;gap:26px;border-left:1px solid var(--border);}
+.mobile-menu.open{transform:translateX(0);}
+.mobile-menu a{font-family:var(--font-head);font-size:20px;text-transform:uppercase;font-weight:600;}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:998;opacity:0;pointer-events:none;transition:opacity .3s;}
+.overlay.show{opacity:1;pointer-events:auto;}
+
+/* HERO */
+.hero{
+  min-height:100vh;display:flex;align-items:center;position:relative;
+  background:linear-gradient(180deg,rgba(8,8,8,.55),rgba(8,8,8,.85) 70%,var(--black)),
+  url('https://images.unsplash.com/photo-1637430308606-86576d8fef3c?auto=format&fit=crop&w=1800&q=75') center/cover no-repeat;
+}
+.hero-inner{padding-top:120px;max-width:720px;}
+.hero h1{font-size:clamp(42px,7vw,78px);margin-bottom:22px;opacity:0;animation:riseIn .9s ease .2s forwards;}
+.hero .lead{font-size:19px;color:#d7d5cf;max-width:520px;margin-bottom:36px;opacity:0;animation:riseIn .9s ease .4s forwards;}
+.hero-ctas{display:flex;gap:16px;flex-wrap:wrap;opacity:0;animation:riseIn .9s ease .55s forwards;}
+.trust-row{display:flex;gap:44px;margin-top:64px;flex-wrap:wrap;opacity:0;animation:riseIn .9s ease .7s forwards;}
+.trust-row div{font-family:var(--font-head);font-size:14px;letter-spacing:1px;text-transform:uppercase;display:flex;align-items:center;gap:10px;color:#ddd;}
+.trust-row svg{color:var(--red-light);}
+@keyframes riseIn{from{opacity:0;transform:translateY(26px);}to{opacity:1;transform:translateY(0);}}
+
+/* STATS */
+.stats{background:var(--red);padding:54px 0;}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center;}
+.stat-num{font-family:var(--font-head);font-size:clamp(32px,4vw,46px);font-weight:700;}
+.stat-label{font-size:13px;letter-spacing:1.5px;text-transform:uppercase;margin-top:4px;opacity:.9;}
+
+/* FADE UTIL */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease;}
+.reveal.in-view{opacity:1;transform:translateY(0);}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;}
+.about-img{position:relative;}
+.about-img img{border-radius:4px;width:100%;height:460px;object-fit:cover;}
+.about-img::before{content:'';position:absolute;top:-18px;left:-18px;width:120px;height:120px;border-top:4px solid var(--red);border-left:4px solid var(--red);z-index:-1;}
+.about-text p{color:#c7c4bd;margin-bottom:18px;font-size:16px;}
+.about-list{list-style:none;margin:26px 0;display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.about-list li{font-size:15px;color:var(--white);display:flex;align-items:center;gap:10px;}
+.about-list li::before{content:'';width:7px;height:7px;background:var(--red);flex-shrink:0;}
+
+/* FEATURE CARDS */
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
+.feature-card{background:var(--card);border:1px solid var(--border);border-left:3px solid var(--red);padding:34px 28px;transition:transform .3s,background .3s,border-color .3s;}
+.feature-card:hover{transform:translateY(-6px);background:#1a1a1a;border-left-color:var(--red-light);}
+.feature-card svg{color:var(--red-light);margin-bottom:20px;}
+.feature-card h3{font-size:19px;margin-bottom:10px;}
+.feature-card p{color:var(--muted);font-size:15px;}
+
+/* FACILITIES */
+.fac-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.fac-card{position:relative;height:320px;overflow:hidden;border-radius:4px;cursor:default;}
+.fac-card img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease;}
+.fac-card:hover img{transform:scale(1.1);}
+.fac-overlay{position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.82) 0%,rgba(0,0,0,.15) 55%,rgba(200,29,44,0) 100%);transition:background .4s;}
+.fac-card:hover .fac-overlay{background:linear-gradient(0deg,rgba(130,15,25,.88) 0%,rgba(0,0,0,.25) 60%,rgba(200,29,44,0) 100%);}
+.fac-label{position:absolute;bottom:24px;left:24px;right:24px;font-family:var(--font-head);font-size:21px;text-transform:uppercase;font-weight:600;}
+.fac-label span{display:block;font-family:var(--font-body);font-size:13px;color:#d9d6cf;font-weight:400;text-transform:none;margin-top:6px;opacity:0;max-height:0;overflow:hidden;transition:opacity .3s,max-height .3s;}
+.fac-card:hover .fac-label span{opacity:1;max-height:50px;}
+
+/* PROGRAMS */
+.prog-card{background:var(--card);border:1px solid var(--border);padding:32px 28px;display:flex;flex-direction:column;transition:transform .3s,border-color .3s;}
+.prog-card:hover{transform:translateY(-6px);border-color:var(--red);}
+.prog-icon{width:52px;height:52px;border-radius:50%;background:rgba(200,29,44,.12);display:flex;align-items:center;justify-content:center;margin-bottom:22px;color:var(--red-light);}
+.prog-card h3{font-size:19px;margin-bottom:10px;}
+.prog-card p{color:var(--muted);font-size:14.5px;flex:1;margin-bottom:22px;}
+.prog-card .btn{align-self:flex-start;padding:11px 22px;font-size:12.5px;}
+
+/* MEMBERSHIP CTA */
+.cta-band{
+  background:linear-gradient(120deg,var(--red-dark),var(--red) 60%,var(--red-dark));
+  padding:90px 0;text-align:center;
+}
+.cta-band h2{font-size:clamp(32px,5vw,54px);margin-bottom:18px;}
+.cta-band p{max-width:560px;margin:0 auto 34px;font-size:17px;color:rgba(255,255,255,.92);}
+.cta-band .hero-ctas{justify-content:center;}
+.cta-band .btn-primary{background:#0a0a0a;}
+.cta-band .btn-primary:hover{background:#000;}
+
+/* PRICING */
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
+.price-card{background:var(--card);border:1px solid var(--border);padding:40px 32px;text-align:center;position:relative;transition:transform .3s,border-color .3s;}
+.price-card:hover{transform:translateY(-8px);border-color:var(--red);}
+.price-card.popular{border-color:var(--red);background:#1b1414;}
+.popular-tag{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--red);font-family:var(--font-head);font-size:12px;letter-spacing:1.5px;padding:6px 18px;border-radius:2px;}
+.price-card h3{font-size:22px;margin:6px 0 20px;}
+.price-tag{font-family:var(--font-head);font-size:20px;color:var(--red-light);letter-spacing:1px;margin-bottom:26px;}
+.price-list{list-style:none;text-align:left;margin-bottom:30px;display:flex;flex-direction:column;gap:12px;}
+.price-list li{font-size:14.5px;color:#cfcdc7;display:flex;gap:10px;align-items:flex-start;}
+.price-list li::before{content:'✓';color:var(--red-light);font-weight:700;}
+.price-card .btn{width:100%;}
+
+/* MOTIVATION */
+.motivation{
+  position:relative;padding:140px 0;text-align:center;
+  background:linear-gradient(rgba(5,5,5,.78),rgba(5,5,5,.85)),url('https://images.unsplash.com/photo-1601422407692-ec4eeec1d9b3?auto=format&fit=crop&w=1800&q=70') center 30%/cover no-repeat;
+}
+.motivation h2{font-size:clamp(30px,5.5vw,56px);max-width:850px;margin:0 auto 20px;}
+.motivation p{color:#d7d4cd;max-width:560px;margin:0 auto;font-size:17px;}
+
+/* GALLERY */
+.gal-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:170px;gap:14px;}
+.gal-item{overflow:hidden;border-radius:3px;cursor:pointer;position:relative;}
+.gal-item img{width:100%;height:100%;object-fit:cover;transition:transform .5s;}
+.gal-item:hover img{transform:scale(1.12);}
+.gal-item.tall{grid-row:span 2;}
+.gal-item::after{content:'';position:absolute;inset:0;background:rgba(200,29,44,0);transition:background .3s;}
+.gal-item:hover::after{background:rgba(200,29,44,.18);}
+.lightbox{position:fixed;inset:0;background:rgba(5,5,5,.94);z-index:2000;display:none;align-items:center;justify-content:center;padding:30px;}
+.lightbox.open{display:flex;}
+.lightbox img{max-width:90vw;max-height:85vh;border-radius:4px;}
+.lightbox-close{position:absolute;top:28px;right:34px;font-size:32px;color:#fff;cursor:pointer;background:none;border:none;}
+
+/* TESTIMONIALS */
+.test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.test-card{background:var(--card);border:1px solid var(--border);padding:30px 26px;}
+.test-top{display:flex;align-items:center;gap:12px;margin-bottom:16px;}
+.test-avatar{width:42px;height:42px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-weight:700;font-size:16px;flex-shrink:0;}
+.test-name{font-weight:700;font-size:15px;}
+.test-meta{font-size:12.5px;color:var(--muted);}
+.test-text{font-size:14.5px;color:#cfcdc7;}
+.google-badge{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;color:var(--muted);margin-top:16px;}
+
+/* LOCATION */
+.loc-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:50px;align-items:stretch;}
+.loc-info h2{margin-bottom:22px;}
+.loc-detail{display:flex;gap:14px;margin-bottom:22px;}
+.loc-detail svg{color:var(--red-light);flex-shrink:0;margin-top:3px;}
+.loc-detail strong{display:block;font-family:var(--font-head);font-size:14px;letter-spacing:.5px;text-transform:uppercase;margin-bottom:3px;}
+.loc-detail span,.loc-detail a{color:var(--muted);font-size:15px;}
+.loc-btns{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px;}
+.map-wrap{border-radius:4px;overflow:hidden;min-height:380px;border:1px solid var(--border);}
+.map-wrap iframe{width:100%;height:100%;min-height:380px;border:0;filter:grayscale(.3) contrast(1.1);}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:60px;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px;}
+.form-group{margin-bottom:18px;display:flex;flex-direction:column;gap:8px;}
+label{font-size:13px;letter-spacing:.5px;text-transform:uppercase;font-family:var(--font-head);color:var(--muted);}
+input,select,textarea{
+  background:var(--card);border:1px solid var(--border);color:var(--white);padding:14px 16px;font-family:var(--font-body);font-size:15px;border-radius:3px;outline:none;transition:border-color .2s;
+}
+input:focus,select:focus,textarea:focus{border-color:var(--red);}
+textarea{resize:vertical;min-height:110px;}
+.side-card{background:var(--card);border:1px solid var(--border);padding:34px 28px;height:fit-content;}
+.side-card h3{font-size:18px;margin-bottom:18px;}
+.side-item{display:flex;gap:14px;margin-bottom:20px;}
+.side-item svg{color:var(--red-light);flex-shrink:0;}
+.side-item strong{display:block;font-size:14px;}
+.side-item span{font-size:14px;color:var(--muted);}
+.form-note{font-size:12.5px;color:var(--muted);margin-top:8px;}
+
+/* FOOTER */
+footer{background:#070707;padding:70px 0 26px;border-top:1px solid var(--border);}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:50px;margin-bottom:50px;}
+.foot-logo{font-family:var(--font-head);font-size:24px;font-weight:700;margin-bottom:10px;}
+.foot-logo span{color:var(--red-light);}
+.foot-tag{color:var(--muted);font-size:14px;margin-top:10px;}
+.foot-social{display:flex;gap:12px;margin-top:22px;}
+.foot-social a{width:38px;height:38px;border:1px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:border-color .2s,background .2s;}
+.foot-social a:hover{border-color:var(--red);background:rgba(200,29,44,.12);}
+.foot-col h4{font-family:var(--font-head);font-size:15px;letter-spacing:1px;text-transform:uppercase;margin-bottom:18px;}
+.foot-col ul{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.foot-col a,.foot-col span{color:var(--muted);font-size:14.5px;}
+.foot-col a:hover{color:var(--red-light);}
+.foot-bottom{border-top:1px solid var(--border);padding-top:26px;text-align:center;color:var(--muted);font-size:13px;}
+
+/* WHATSAPP FLOAT */
+.wa-float{
+  position:fixed;bottom:26px;right:26px;z-index:900;width:60px;height:60px;border-radius:50%;
+  background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(0,0,0,.4);
+  animation:pulse 2.4s infinite;
+}
+.wa-float:hover{transform:scale(1.08);}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.5);}70%{box-shadow:0 0 0 14px rgba(37,211,102,0);}100%{box-shadow:0 0 0 0 rgba(37,211,102,0);}}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .grid-3{grid-template-columns:repeat(2,1fr);}
+  .fac-grid{grid-template-columns:repeat(2,1fr);}
+  .about-grid,.loc-grid,.contact-grid{grid-template-columns:1fr;}
+  .price-grid{grid-template-columns:repeat(3,1fr);}
+  .gal-grid{grid-template-columns:repeat(3,1fr);}
+  .foot-grid{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:860px){
+  .nav-links{display:none;}
+  .burger{display:flex;}
+  .stats-grid{grid-template-columns:repeat(2,1fr);row-gap:30px;}
+  .section{padding:70px 0;}
+}
+@media(max-width:768px){
+  .grid-3{grid-template-columns:1fr;}
+  .fac-grid{grid-template-columns:1fr;}
+  .price-grid{grid-template-columns:1fr;}
+  .test-grid{grid-template-columns:1fr;}
+  .gal-grid{grid-template-columns:repeat(2,1fr);}
+  .form-row{grid-template-columns:1fr;}
+  .about-list{grid-template-columns:1fr;}
+  .foot-grid{grid-template-columns:1fr;gap:34px;}
+  .hero-ctas,.trust-row{justify-content:flex-start;}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none !important;transition:none !important;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header id="header">
+  <div class="container nav-wrap">
+    <a href="#home" class="logo">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#e2273a" stroke-width="2" stroke-linecap="round"><path d="M2 12h3M19 12h3M5 8v8M19 8v8M5 10h2v4H5zM17 10h2v4h-2zM9 12h6"/></svg>
+      MUSCLE <span>HUB</span>
+    </a>
+    <nav><ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#facilities">Facilities</a></li>
+      <li><a href="#programs">Programs</a></li>
+      <li><a href="#membership">Membership</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul></nav>
+    <div class="nav-right">
+      <a href="#membership" class="btn btn-primary" style="padding:12px 24px;">Join Now</a>
+      <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="overlay" id="overlay"></div>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#home">Home</a><a href="#about">About</a><a href="#facilities">Facilities</a>
+  <a href="#programs">Programs</a><a href="#membership">Membership</a><a href="#gallery">Gallery</a><a href="#contact">Contact</a>
+  <a href="#membership" class="btn btn-primary" style="margin-top:10px;">Join Now</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="container hero-inner">
+    <span class="eyebrow" style="opacity:0;animation:riseIn .9s ease 0s forwards;">Muscle Hub Gym & Fitness Center — Lahore</span>
+    <h1>Build Your Body.<br>Build Your Power.</h1>
+    <p class="lead">Train harder. Get stronger. Become the best version of yourself — at a fitness center built for serious results in the heart of Lahore.</p>
+    <div class="hero-ctas">
+      <a href="#membership" class="btn btn-primary">Join Now</a>
+      <a href="tel:+923330425453" class="btn btn-outline">Call Us</a>
+    </div>
+    <div class="trust-row">
+      <div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.9 6.6L22 9.3l-5 4.9L18.2 22 12 18.3 5.8 22 7 14.2 2 9.3l7.1-.7z"/></svg>Professional Training</div>
+      <div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 21V9M10 21V3M16 21v-7M22 21H2"/></svg>Modern Equipment</div>
+      <div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>Results Focused</div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="container stats-grid">
+    <div><div class="stat-num counter" data-target="500">0</div><div class="stat-label">+ Active Members</div></div>
+    <div><div class="stat-num counter" data-target="20">0</div><div class="stat-label">+ Fitness Programs</div></div>
+    <div><div class="stat-num">7 Days</div><div class="stat-label">Open Weekly</div></div>
+    <div><div class="stat-num">100%</div><div class="stat-label">Dedication</div></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="container about-grid">
+    <div class="about-img reveal">
+      <img src="https://images.unsplash.com/photo-1728486145245-d4cb0c9c3470?auto=format&fit=crop&w=900&q=75" alt="Inside Muscle Hub Gym training floor in Lahore" loading="lazy">
+    </div>
+    <div class="about-text reveal">
+      <span class="eyebrow">About Muscle Hub</span>
+      <h2>More Than A Gym.<br>It's Your Grind.</h2>
+      <p>Muscle Hub Gym & Fitness Center is a dedicated fitness destination in Lahore, designed for people who are serious about improving their strength, fitness and overall performance.</p>
+      <p>From strength training to cardio, muscle building to weight management, our gym gives you the space, equipment and motivating environment to push past your limits.</p>
+      <ul class="about-list">
+        <li>Strength Training</li><li>Cardio Workouts</li>
+        <li>Muscle Building</li><li>Weight Management</li>
+        <li>General Fitness</li><li>Motivating Environment</li>
+      </ul>
+      <a href="#programs" class="btn btn-primary">Start Your Journey</a>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">The Muscle Hub Difference</span>
+      <h2>Why Muscle Hub?</h2>
+    </div>
+    <div class="grid-3">
+      <div class="feature-card reveal">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 12h3M19 12h3M5 8v8M19 8v8M5 10h2v4H5zM17 10h2v4h-2zM9 12h6"/></svg>
+        <h3>Modern Equipment</h3><p>Quality equipment for effective strength and fitness training.</p>
+      </div>
+      <div class="feature-card reveal">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M13 2L3 14h8l-1 8 11-14h-8z"/></svg>
+        <h3>Powerful Workout Environment</h3><p>A motivating environment designed to keep you focused.</p>
+      </div>
+      <div class="feature-card reveal">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6.5 6.5a4.95 4.95 0 117 7l-7-7zM17.5 17.5l-7-7"/><circle cx="18" cy="6" r="2"/><circle cx="6" cy="18" r="2"/></svg>
+        <h3>Strength Training</h3><p>Equipment and space for serious strength workouts.</p>
+      </div>
+      <div class="feature-card reveal">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 18l6-6 4 4 8-8"/><path d="M15 8h6v6"/></svg>
+        <h3>Fitness For Every Level</h3><p>Whether you're starting out or experienced, train at your own pace.</p>
+      </div>
+      <div class="feature-card reveal">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r=".5" fill="currentColor"/></svg>
+        <h3>Results Focused</h3><p>Stay consistent and work toward measurable fitness goals.</p>
+      </div>
+      <div class="feature-card reveal">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+        <h3>Supportive Community</h3><p>Train around people who are serious about fitness.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FACILITIES -->
+<section class="section" id="facilities">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Our Space</span>
+      <h2>Train In A Space Built For Results</h2>
+    </div>
+    <div class="fac-grid">
+      <div class="fac-card reveal"><img src="https://images.unsplash.com/photo-1637430308606-86576d8fef3c?auto=format&fit=crop&w=800&q=75" alt="Strength training area at Muscle Hub Gym" loading="lazy"><div class="fac-overlay"></div><div class="fac-label">Strength Training Area<span>Dedicated space for heavy, serious lifting.</span></div></div>
+      <div class="fac-card reveal"><img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=75" alt="Free weights section at Muscle Hub Gym" loading="lazy"><div class="fac-overlay"></div><div class="fac-label">Free Weights<span>Full range of barbells, plates and racks.</span></div></div>
+      <div class="fac-card reveal"><img src="https://images.unsplash.com/photo-1771586791190-97ed536c54af?auto=format&fit=crop&w=800&q=75" alt="Cardio area at Muscle Hub Gym" loading="lazy"><div class="fac-overlay"></div><div class="fac-label">Cardio Area<span>Build endurance and burn fat effectively.</span></div></div>
+      <div class="fac-card reveal"><img src="https://images.unsplash.com/photo-1729281008834-90b5776d0c61?auto=format&fit=crop&w=800&q=75" alt="Weight machines at Muscle Hub Gym" loading="lazy"><div class="fac-overlay"></div><div class="fac-label">Weight Machines<span>Guided machines for targeted muscle work.</span></div></div>
+      <div class="fac-card reveal"><img src="https://images.unsplash.com/photo-1601422407692-ec4eeec1d9b3?auto=format&fit=crop&w=800&q=75" alt="Functional training area at Muscle Hub Gym" loading="lazy"><div class="fac-overlay"></div><div class="fac-label">Functional Training<span>Movement-based training for real performance.</span></div></div>
+      <div class="fac-card reveal"><img src="https://images.unsplash.com/photo-1641337221253-fdc7237f6b61?auto=format&fit=crop&w=800&q=75" alt="Main workout area at Muscle Hub Gym" loading="lazy"><div class="fac-overlay"></div><div class="fac-label">Workout Area<span>Open floor space to train your way.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMS -->
+<section class="section section-alt" id="programs">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Programs</span>
+      <h2>Train Your Way</h2>
+    </div>
+    <div class="grid-3" id="progGrid">
+      <div class="prog-card reveal">
+        <div class="prog-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 12h3M19 12h3M5 8v8M19 8v8M5 10h2v4H5zM17 10h2v4h-2zM9 12h6"/></svg></div>
+        <h3>Strength Training</h3><p>Build strength, power and muscle with focused, progressive training.</p>
+        <button class="btn btn-outline enquire" data-goal="Strength Training">Enquire Now</button>
+      </div>
+      <div class="prog-card reveal">
+        <div class="prog-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6.5 6.5a4.95 4.95 0 117 7l-7-7zM17.5 17.5l-7-7"/></svg></div>
+        <h3>Muscle Building</h3><p>Structured workouts focused on hypertrophy and muscle development.</p>
+        <button class="btn btn-outline enquire" data-goal="Muscle Building">Enquire Now</button>
+      </div>
+      <div class="prog-card reveal">
+        <div class="prog-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2L3 14h8l-1 8 11-14h-8z"/></svg></div>
+        <h3>Fat Loss & Fitness</h3><p>Work toward improved fitness and body composition.</p>
+        <button class="btn btn-outline enquire" data-goal="Weight Loss">Enquire Now</button>
+      </div>
+      <div class="prog-card reveal">
+        <div class="prog-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+        <h3>Cardio Training</h3><p>Improve endurance and cardiovascular fitness.</p>
+        <button class="btn btn-outline enquire" data-goal="General Fitness">Enquire Now</button>
+      </div>
+      <div class="prog-card reveal">
+        <div class="prog-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 18l6-6 4 4 8-8"/><path d="M15 8h6v6"/></svg></div>
+        <h3>Functional Training</h3><p>Improve movement, strength and overall performance.</p>
+        <button class="btn btn-outline enquire" data-goal="General Fitness">Enquire Now</button>
+      </div>
+      <div class="prog-card reveal">
+        <div class="prog-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2a5 5 0 00-5 5c0 4 5 11 5 11s5-7 5-11a5 5 0 00-5-5z"/><circle cx="12" cy="7" r="2"/></svg></div>
+        <h3>Beginner Fitness</h3><p>A comfortable starting point for people beginning their fitness journey.</p>
+        <button class="btn btn-outline enquire" data-goal="Beginner">Enquire Now</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MEMBERSHIP CTA -->
+<section class="cta-band" id="membership">
+  <div class="container">
+    <h2>Ready To Change Your Body?</h2>
+    <p>Stop waiting for the perfect time. Start training today at Muscle Hub Gym.</p>
+    <div class="hero-ctas">
+      <a href="#contact" class="btn btn-primary">Join Now</a>
+      <a href="tel:+923330425453" class="btn btn-outline-light">Call +92 333 0425453</a>
+    </div>
+  </div>
+</section>
+
+<!-- MEMBERSHIP OPTIONS -->
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Membership</span>
+      <h2>Choose Your Path</h2>
+      <p>Every member trains differently. Get in touch and we'll match you with the right plan — no inflated pricing, just an honest conversation.</p>
+    </div>
+    <div class="price-grid">
+      <div class="price-card reveal">
+        <h3>Basic</h3>
+        <div class="price-tag">Contact For Price</div>
+        <ul class="price-list">
+          <li>Gym access</li><li>Strength training</li><li>Cardio access</li><li>Fitness equipment</li>
+        </ul>
+        <a href="#contact" class="btn btn-outline">Get Membership Details</a>
+      </div>
+      <div class="price-card popular reveal">
+        <span class="popular-tag">Popular</span>
+        <h3>Popular</h3>
+        <div class="price-tag">Contact For Price</div>
+        <ul class="price-list">
+          <li>Gym access</li><li>Strength training</li><li>Cardio access</li><li>Fitness guidance</li><li>Priority support</li>
+        </ul>
+        <a href="#contact" class="btn btn-primary">Get Membership Details</a>
+      </div>
+      <div class="price-card reveal">
+        <h3>Premium</h3>
+        <div class="price-tag">Contact For Price</div>
+        <ul class="price-list">
+          <li>Full gym access</li><li>Fitness guidance</li><li>Personalized support</li><li>Premium training experience</li>
+        </ul>
+        <a href="#contact" class="btn btn-outline">Get Membership Details</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MOTIVATION -->
+<section class="motivation">
+  <div class="container">
+    <h2 class="reveal">Your Only Limit Is The One You Set.</h2>
+    <p class="reveal">Every rep, every set, every session — progress is built one workout at a time. Show up, put in the work, and let the results speak for themselves.</p>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="section section-alt" id="gallery">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Gallery</span>
+      <h2>Inside Muscle Hub</h2>
+    </div>
+    <div class="gal-grid">
+      <div class="gal-item tall reveal"><img src="https://images.unsplash.com/photo-1637430308606-86576d8fef3c?auto=format&fit=crop&w=700&q=70" alt="Gym floor"></div>
+      <div class="gal-item reveal"><img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=600&q=70" alt="Free weights"></div>
+      <div class="gal-item reveal"><img src="https://images.unsplash.com/photo-1641337221253-fdc7237f6b61?auto=format&fit=crop&w=600&q=70" alt="Dumbbell training"></div>
+      <div class="gal-item tall reveal"><img src="https://images.unsplash.com/photo-1728486145245-d4cb0c9c3470?auto=format&fit=crop&w=700&q=70" alt="Gym equipment"></div>
+      <div class="gal-item reveal"><img src="https://images.unsplash.com/photo-1771586791190-97ed536c54af?auto=format&fit=crop&w=600&q=70" alt="Cardio machines"></div>
+      <div class="gal-item reveal"><img src="https://images.unsplash.com/photo-1729281008834-90b5776d0c61?auto=format&fit=crop&w=600&q=70" alt="Machine training"></div>
+      <div class="gal-item reveal"><img src="https://images.unsplash.com/photo-1601422407692-ec4eeec1d9b3?auto=format&fit=crop&w=600&q=70" alt="Functional training"></div>
+      <div class="gal-item reveal"><img src="https://images.unsplash.com/photo-1637430308606-86576d8fef3c?auto=format&fit=crop&w=600&q=65" alt="Gym interior"></div>
+    </div>
+  </div>
+</section>
+<div class="lightbox" id="lightbox"><button class="lightbox-close" id="lbClose">&times;</button><img id="lbImg" src="" alt=""></div>
+
+<!-- TESTIMONIALS -->
+<section class="section" id="testimonials">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Google Reviews</span>
+      <h2>What Members Say</h2>
+    </div>
+    <div class="test-grid">
+      <div class="test-card reveal">
+        <div class="test-top"><div class="test-avatar">A</div><div><div class="test-name">Abdul Rafy Khan</div><div class="test-meta">Local Guide · 14 reviews</div></div></div>
+        <p class="test-text">"Great gym with great owner."</p>
+        <div class="google-badge">★ Google review</div>
+      </div>
+      <div class="test-card reveal">
+        <div class="test-top"><div class="test-avatar">H</div><div><div class="test-name">Hamza Khokhar</div><div class="test-meta">Local Guide · 157 reviews</div></div></div>
+        <p class="test-text">"The gym is good. On Saturday they close at 11 — some members asked to stay open 15 minutes longer, which isn't asking much."</p>
+        <div class="google-badge">★ Google review</div>
+      </div>
+      <div class="test-card reveal">
+        <div class="test-top"><div class="test-avatar">H</div><div><div class="test-name">HSAAN . J</div><div class="test-meta">Local Guide · 68 reviews</div></div></div>
+        <p class="test-text">"As the name represents, this gym is also helpful for muscle-ups. Recommended, but it depends on your experience."</p>
+        <div class="google-badge">★ Google review</div>
+      </div>
+      <div class="test-card reveal">
+        <div class="test-top"><div class="test-avatar">M</div><div><div class="test-name">Mr. Malik</div><div class="test-meta">Local Guide · 183 reviews</div></div></div>
+        <p class="test-text">"A neat and well maintained gym in this area, with very affordable membership fees."</p>
+        <div class="google-badge">★ Google review</div>
+      </div>
+      <div class="test-card reveal">
+        <div class="test-top"><div class="test-avatar">A</div><div><div class="test-name">Advocate Shafique Baloch</div><div class="test-meta">Local Guide · 982 reviews</div></div></div>
+        <p class="test-text">"Good place to exercise. However, comparatively an average gym."</p>
+        <div class="google-badge">★ Google review</div>
+      </div>
+      <div class="test-card reveal" style="display:flex;align-items:center;justify-content:center;border-style:dashed;">
+        <p class="test-text" style="text-align:center;color:var(--muted);">Add genuine member testimonial here.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section class="section section-alt" id="location">
+  <div class="container loc-grid">
+    <div class="loc-info reveal">
+      <span class="eyebrow">Find Us</span>
+      <h2>Find Muscle Hub</h2>
+      <div class="loc-detail">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s7-7.4 7-13a7 7 0 10-14 0c0 5.6 7 13 7 13z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        <div><strong>Muscle Hub Gym & Fitness Center</strong><span>Lower Mall, Rewaz Garden, Rewaz Gardens, Lahore, 54000, Pakistan</span></div>
+      </div>
+      <div class="loc-detail">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 01-2.2 2A19.8 19.8 0 013 5.2 2 2 0 015 3h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.7a2 2 0 01-.5 2.1l-1.3 1.3a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.5c.9.3 1.8.5 2.7.6a2 2 0 011.7 2.3z"/></svg>
+        <div><strong>Phone</strong><a href="tel:+923330425453">+92 333 0425453</a></div>
+      </div>
+      <div class="loc-detail">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M8 2v4M16 2v4M3 10h18"/></svg>
+        <div><strong>Plus Code</strong><span>H863+FV Lahore, Pakistan</span></div>
+      </div>
+      <div class="loc-btns">
+        <a href="https://www.google.com/maps/dir/?api=1&destination=H863%2BFV+Lahore%2C+Pakistan" target="_blank" rel="noopener" class="btn btn-primary">Get Directions</a>
+        <a href="tel:+923330425453" class="btn btn-outline">Call Now</a>
+        <a href="https://wa.me/923330425453?text=Hello%20Muscle%20Hub%20Gym%2C%20I%20would%20like%20to%20know%20about%20your%20membership%20and%20training%20options." target="_blank" rel="noopener" class="btn btn-outline">WhatsApp Us</a>
+      </div>
+    </div>
+    <div class="map-wrap reveal">
+      <iframe src="https://maps.google.com/maps?q=H863%2BFV+Lahore%2C+Pakistan&output=embed" loading="lazy" title="Muscle Hub Gym location map"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <div class="container contact-grid">
+    <div class="reveal">
+      <span class="eyebrow">Get Started</span>
+      <h2 style="margin-bottom:30px;">Start Your Fitness Journey</h2>
+      <form id="enquiryForm">
+        <div class="form-row">
+          <div class="form-group"><label for="fname">Full Name</label><input type="text" id="fname" required></div>
+          <div class="form-group"><label for="fphone">Phone Number</label><input type="tel" id="fphone" required></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label for="femail">Email</label><input type="email" id="femail"></div>
+          <div class="form-group"><label for="fgoal">Fitness Goal</label>
+            <select id="fgoal">
+              <option>Muscle Building</option><option>Weight Loss</option><option>Strength Training</option>
+              <option>General Fitness</option><option>Beginner</option><option>Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group"><label for="fmsg">Message</label><textarea id="fmsg" placeholder="Tell us a bit about your goals..."></textarea></div>
+        <button type="submit" class="btn btn-primary">Send Enquiry</button>
+        <p class="form-note">Sending opens WhatsApp with your details pre-filled so our team can reply directly.</p>
+      </form>
+    </div>
+    <div class="side-card reveal">
+      <h3>Call Us</h3>
+      <div class="side-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 01-2.2 2A19.8 19.8 0 013 5.2 2 2 0 015 3h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.7a2 2 0 01-.5 2.1l-1.3 1.3a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.5c.9.3 1.8.5 2.7.6a2 2 0 011.7 2.3z"/></svg>
+        <div><strong>+92 333 0425453</strong><span>Available during gym hours</span></div>
+      </div>
+      <h3 style="margin-top:26px;">Location</h3>
+      <div class="side-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s7-7.4 7-13a7 7 0 10-14 0c0 5.6 7 13 7 13z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        <div><strong>Lower Mall, Rewaz Garden</strong><span>Lahore, 54000, Pakistan</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-logo">MUSCLE <span>HUB</span></div>
+        <div style="font-family:var(--font-head);font-size:13px;letter-spacing:1px;color:var(--muted);">GYM & FITNESS CENTER</div>
+        <p class="foot-tag">"Train Hard. Stay Strong."</p>
+        <div class="foot-social">
+          <a href="#" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+          <a href="https://wa.me/923330425453" aria-label="WhatsApp"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a8.5 8.5 0 01-12.4 7.5L3 20l1.1-5.4A8.5 8.5 0 1121 11.5z"/></svg></a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4>Quick Links</h4>
+        <ul><li><a href="#home">Home</a></li><li><a href="#about">About</a></li><li><a href="#facilities">Facilities</a></li><li><a href="#programs">Programs</a></li><li><a href="#membership">Membership</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#contact">Contact</a></li></ul>
+      </div>
+      <div class="foot-col">
+        <h4>Contact</h4>
+        <ul><li><a href="tel:+923330425453">+92 333 0425453</a></li><li><span>Lower Mall, Rewaz Garden, Lahore, Pakistan</span></li><li><span>H863+FV Lahore</span></li></ul>
+      </div>
+    </div>
+    <div class="foot-bottom">© 2026 Muscle Hub Gym & Fitness Center. All Rights Reserved.</div>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a class="wa-float" href="https://wa.me/923330425453?text=Hello%20Muscle%20Hub%20Gym%2C%20I%20would%20like%20to%20know%20about%20your%20membership%20and%20training%20options." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg width="30" height="30" viewBox="0 0 24 24" fill="#fff"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.78.47 3.44 1.3 4.89L2 22l5.33-1.4a9.9 9.9 0 004.71 1.2h.01c5.46 0 9.91-4.45 9.91-9.9 0-2.65-1.03-5.14-2.9-7.01A9.86 9.86 0 0012.04 2zm5.8 14.17c-.24.68-1.4 1.3-1.93 1.38-.5.08-1.12.11-1.8-.12-.42-.13-.95-.31-1.64-.6-2.88-1.25-4.76-4.14-4.9-4.33-.14-.19-1.17-1.56-1.17-2.98 0-1.42.74-2.11 1-2.4.26-.29.57-.36.76-.36h.54c.18 0 .42-.07.65.5.24.58.81 2 .88 2.14.07.14.12.3.02.49-.1.19-.15.3-.3.47-.14.17-.3.37-.43.5-.14.14-.29.3-.12.58.17.29.75 1.24 1.62 2 1.11.99 2.05 1.3 2.34 1.44.29.14.46.12.63-.07.17-.19.72-.84.92-1.13.19-.29.38-.24.64-.14.26.1 1.67.79 1.95.93.29.14.48.22.55.34.07.12.07.7-.17 1.38z"/></svg>
+</a>
+
+<script>
+// Nav scroll state
+const header=document.getElementById('header');
+window.addEventListener('scroll',()=>{header.classList.toggle('scrolled',window.scrollY>40);});
+
+// Mobile menu
+const burger=document.getElementById('burger'),menu=document.getElementById('mobileMenu'),overlay=document.getElementById('overlay');
+function toggleMenu(open){menu.classList.toggle('open',open);overlay.classList.toggle('show',open);}
+burger.addEventListener('click',()=>toggleMenu(!menu.classList.contains('open')));
+overlay.addEventListener('click',()=>toggleMenu(false));
+document.querySelectorAll('.mobile-menu a').forEach(a=>a.addEventListener('click',()=>toggleMenu(false)));
+
+// Reveal on scroll
+const io=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in-view');io.unobserve(e.target);}});},{threshold:.15});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+// Counters
+const counters=document.querySelectorAll('.counter');
+const cio=new IntersectionObserver((entries)=>{entries.forEach(e=>{
+  if(e.isIntersecting){
+    const el=e.target,target=+el.dataset.target;let cur=0;
+    const step=Math.max(1,Math.ceil(target/60));
+    const t=setInterval(()=>{cur+=step;if(cur>=target){cur=target;clearInterval(t);}el.textContent=cur;},25);
+    cio.unobserve(el);
+  }
+});},{threshold:.5});
+counters.forEach(c=>cio.observe(c));
+
+// Gallery lightbox
+const lightbox=document.getElementById('lightbox'),lbImg=document.getElementById('lbImg');
+document.querySelectorAll('.gal-item img').forEach(img=>{
+  img.addEventListener('click',()=>{lbImg.src=img.src.replace('w=600','w=1400').replace('w=700','w=1400');lightbox.classList.add('open');});
+});
+document.getElementById('lbClose').addEventListener('click',()=>lightbox.classList.remove('open'));
+lightbox.addEventListener('click',(e)=>{if(e.target===lightbox)lightbox.classList.remove('open');});
+
+// Program "Enquire Now" -> scroll to contact + preselect goal
+document.querySelectorAll('.enquire').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const goal=btn.dataset.goal;
+    const sel=document.getElementById('fgoal');
+    for(const opt of sel.options){if(opt.value===goal){sel.value=goal;break;}}
+    document.getElementById('contact').scrollIntoView({behavior:'smooth'});
+  });
+});
+
+// Contact form -> WhatsApp
+document.getElementById('enquiryForm').addEventListener('submit',function(e){
+  e.preventDefault();
+  const name=document.getElementById('fname').value;
+  const phone=document.getElementById('fphone').value;
+  const goal=document.getElementById('fgoal').value;
+  const msg=document.getElementById('fmsg').value;
+  const text=`Hello Muscle Hub Gym, my name is ${name} (${phone}). I'm interested in: ${goal}. ${msg}`;
+  window.open('https://wa.me/923330425453?text='+encodeURIComponent(text),'_blank');
+});
+</script>
+</body>
+</html>
